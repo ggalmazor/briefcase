@@ -15,8 +15,7 @@
  */
 package org.opendatakit.briefcase.ui.export.components;
 
-import static java.awt.Color.DARK_GRAY;
-import static java.awt.Color.LIGHT_GRAY;
+
 import static java.time.format.DateTimeFormatter.ofLocalizedDateTime;
 import static java.time.format.FormatStyle.SHORT;
 import static org.opendatakit.briefcase.export.ExportConfiguration.Builder.empty;
@@ -28,7 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.swing.JButton;
+
 import javax.swing.table.AbstractTableModel;
 import org.opendatakit.briefcase.export.ExportConfiguration;
 import org.opendatakit.briefcase.export.ExportForms;
