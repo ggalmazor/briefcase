@@ -35,15 +35,13 @@ import org.opendatakit.briefcase.export.ExportForms;
 import org.opendatakit.briefcase.model.BriefcasePreferences;
 import org.opendatakit.briefcase.model.FormStatus;
 import org.opendatakit.briefcase.reused.transfer.RemoteServer;
-import org.opendatakit.briefcase.ui.reused.DetailsStatusButton;
 import org.opendatakit.briefcase.ui.reused.ExportConfigurationButton;
 import org.opendatakit.briefcase.ui.reused.UI;
 
 public class ExportFormsTableViewModel extends AbstractTableModel {
   private final List<Runnable> onChangeCallbacks = new ArrayList<>();
-  private final Map<FormStatus, DetailsStatusButton> detailButtons = new HashMap<>();
+  private final Map<FormStatus, JButton> detailButtons = new HashMap<>();
   private final Map<FormStatus, ExportConfigurationButton> confButtons = new HashMap<>();
-
   private final ExportForms forms;
   private final BriefcasePreferences appPreferences;
   private BriefcasePreferences pullPrefs;
@@ -107,9 +105,8 @@ public class ExportFormsTableViewModel extends AbstractTableModel {
     triggerChange();
   }
 
-  private void updateDetailButton(FormStatus form, DetailsStatusButton button) {
-   button.setStatus(!(form.getStatusHistory().isEmpty()));
-   // button.setForeground(form.getStatusHistory().isEmpty() ? LIGHT_GRAY : DARK_GRAY);
+  private void updateDetailButton(FormStatus form, JButton button) {
+    button.setForeground(form.getStatusHistory().isEmpty() ? LIGHT_GRAY : DARK_GRAY);
   }
 
   private void updateConfButton(FormStatus form, ExportConfigurationButton button) {

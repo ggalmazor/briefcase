@@ -14,12 +14,12 @@
  * the License.
  */
 package org.opendatakit.briefcase.ui.reused;
-import static java.awt.Color.DARK_GRAY;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
 import javax.swing.JButton;
-
+import static java.awt.Color.DARK_GRAY;
 
 /**
  * Contains application logic pertaining to the Export Configuration Button
@@ -30,7 +30,6 @@ public class ExportConfigurationButton extends JButton implements Comparable<Exp
 
   private boolean configured = false;
 
-  @SuppressWarnings("checkstyle:AvoidEscapedUnicodeCharacters")
   public ExportConfigurationButton(){
     super();
     // Use custom fonts instead of png for easier scaling

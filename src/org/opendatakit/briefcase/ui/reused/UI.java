@@ -63,12 +63,13 @@ public class UI {
   private static final Font ic_receipt = FontUtils.getCustomFont("ic_receipt.ttf", 16f);
 
   @SuppressWarnings("checkstyle:AvoidEscapedUnicodeCharacters")
-  public static DetailsStatusButton buildDetailButton(FormStatus form) {
+  public static JButton buildDetailButton(FormStatus form) {
     // Use custom fonts instead of png for easier scaling
-    DetailsStatusButton button = new DetailsStatusButton();
+    JButton button = new JButton("\uE900");
     button.setFont(ic_receipt); // custom font that overrides  with a receipt icon
     button.setToolTipText("View this form's status history");
     button.setMargin(new Insets(0, 0, 0, 0));
+
     button.setForeground(form.getStatusHistory().isEmpty() ? LIGHT_GRAY : DARK_GRAY);
     button.addActionListener(__ -> {
       if (!form.getStatusHistory().isEmpty())
