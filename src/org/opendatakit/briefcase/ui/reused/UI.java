@@ -16,9 +16,7 @@
 
 package org.opendatakit.briefcase.ui.reused;
 
-import static java.awt.Color.DARK_GRAY;
 import static java.awt.Color.GRAY;
-import static java.awt.Color.LIGHT_GRAY;
 import static java.awt.Cursor.HAND_CURSOR;
 import static java.awt.Cursor.getPredefinedCursor;
 import static java.awt.Desktop.getDesktop;
@@ -34,7 +32,6 @@ import static org.opendatakit.briefcase.ui.ScrollingStatusListDialog.showDialog;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Insets;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseListener;
@@ -206,5 +203,20 @@ public class UI {
         Optional.of(new String(password.getPassword())).filter(s -> !s.isEmpty())
     ).map(Credentials::new);
   }
+
+  /**
+   * Sort Comparator for columns providing booleans
+   * @param o1 The first object to be compared
+   * @param o2 The second object to be compared
+   * @return int for sorting of two elements (0(equals) , -1(less than), 1(greater than)
+   */
+  public static int compareSelectionButton(Boolean o1, Boolean o2){
+    if(o1.equals(o2))
+      return 0;
+    if(o1.equals(Boolean.TRUE)&&o2.equals(Boolean.FALSE))
+      return -1;
+    return 1;
+  }
+
 
 }

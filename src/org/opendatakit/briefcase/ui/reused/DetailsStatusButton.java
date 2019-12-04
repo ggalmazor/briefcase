@@ -35,6 +35,7 @@ public class DetailsStatusButton extends JButton implements Comparable<DetailsSt
     setFont(IC_RECEIPT);// custom font that overrides  with a receipt icon
     setToolTipText("View this form's status history");
     setMargin(new Insets(0, 0, 0, 0));
+    setForeground(LIGHT_GRAY);
   }
 
   public void setStatus (boolean value){
@@ -42,7 +43,7 @@ public class DetailsStatusButton extends JButton implements Comparable<DetailsSt
     setForeground(status ?  DARK_GRAY : LIGHT_GRAY );
   }
 
-  public boolean getStatus(){
+  private boolean getStatus(){
     return status;
   }
 

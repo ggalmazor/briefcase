@@ -14,7 +14,9 @@
  * the License.
  */
 package org.opendatakit.briefcase.ui.reused;
+
 import static java.awt.Color.DARK_GRAY;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Insets;
@@ -45,14 +47,14 @@ public class ExportConfigurationButton extends JButton implements Comparable<Exp
     setForeground(configured ? NO_CONF_OVERRIDE_COLOR : DARK_GRAY);
   }
 
-  public boolean isConfigured(){
+  private boolean getConfigured(){
     return configured;
   }
 
   public int compareTo(ExportConfigurationButton button) {
-    if (this.isConfigured() == button.isConfigured())
+    if (this.getConfigured() == button.getConfigured())
       return 0;
-    if (this.isConfigured() && !button.isConfigured())
+    if (this.getConfigured() && !button.getConfigured())
       return -1;
     return 1;
   }
