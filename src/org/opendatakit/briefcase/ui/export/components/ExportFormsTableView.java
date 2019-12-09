@@ -38,7 +38,7 @@ import org.opendatakit.briefcase.ui.reused.UI;
 
 public class ExportFormsTableView extends JTable {
   static final String[] HEADERS = new String[]{"", "", "Form Name", "Export Status", "Last Export", ""};
-  static final Class[] TYPES = new Class[]{Boolean.class, ExportConfigurationButton.class, String.class, String.class, String.class, DetailsStatusButton.class};
+  static final Class[] TYPES = new Class[]{Boolean.class, JButton.class, String.class, String.class, String.class, DetailsStatusButton.class};
   static final boolean[] EDITABLE_COLS = new boolean[]{true, false, false, false, false, false};
 
   public static final int SELECTED_CHECKBOX_COL = 0;
@@ -84,6 +84,7 @@ public class ExportFormsTableView extends JTable {
 
     TableRowSorter<ExportFormsTableViewModel> sorter = sortBy(getModel(), FORM_NAME_COL, ASCENDING);
     sorter.setComparator(SELECTED_CHECKBOX_COL, (Comparator<Boolean>) UI::compareSelectionButton);
+    sorter.setComparator(OVERRIDE_CONF_COL, (Comparator<JButton>) ExportConfigurationButton::compare);
     setRowSorter(sorter);
     sorter.sort();
   }
